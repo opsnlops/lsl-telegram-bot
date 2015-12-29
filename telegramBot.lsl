@@ -34,8 +34,8 @@ integer botId = -1;
 
 
 /*
-    Telegram works by message offsets. Keep track of the higest update_id
-    we've seen, so we can tell Telegram which ones we've processed aready.
+    Telegram works by message offsets. Keep track of the highest update_id
+    we've seen, so we can tell Telegram which ones we've processed already.
 */
 integer higestUpdateIdSeen = -1;
 
