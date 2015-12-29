@@ -92,9 +92,9 @@ parseGetMeReponse(string json)
         {
           "ok": true,
           "result": {
-            "id": 130142058,
+            "id": 130140000,
             "first_name": "Cuddles",
-            "username": "CuddlesBot"
+            "username": "SomeBot"
           }
         }
     */
