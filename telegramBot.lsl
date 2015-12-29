@@ -1,12 +1,28 @@
+//
+// LSL Telegram Bot
+//
+// Written by Bunny Halberd!
+//
+//
+//  This is just a simple bot that I wrote to see if I could do it. It
+//  turns out that, yeah, I can! Neat! :)
+//
+//  You need to get an API Token from Telegram before this will work. I
+//  removed mine from my source because it doesn't belong in here, duh.
+//
+// December, 2015
+//
+
+
 
 // Telegram Endpoint
 string apiUrl = "https://api.telegram.org";
-string apiToken = "xxxxxxxx";
+string apiToken = "XXXXXXXXXXXXXXXXX";
 
 
 // Telegram ID of my owner
-integer ownerId = 00000;
-integer ownerGroup = -0000000;
+integer ownerId = 0000;
+integer ownerGroup = -0000;
 
 key getMeRequestId = NULL_KEY;
 key getUpdatesRequestId = NULL_KEY;
@@ -134,12 +150,12 @@ parseSendMessageResponse(string json)
           "result": {
             "message_id": 23,
             "from": {
-              "id": 000000000000000000,
+              "id": 130142058,
               "first_name": "Cuddles",
               "username": "SomeBot"
             },
             "chat": {
-              "id": 0000000000,
+              "id": 000000000000000,
               "first_name": "Bunny",
               "last_name": "Mickley",
               "username": "bunnyhalberd",
@@ -272,10 +288,20 @@ parseUpdateResponse(string json)
             string prettyName = fromFirstName;
             if( fromLastName != JSON_INVALID ) prettyName = prettyName + " " + fromLastName;
             
-            llSay(0, "[" + chatTitle + "] <" + prettyName + "> " + messageText);
             
             
-       
+            // If this was a status request, get what the user requested
+            if(llSubStringIndex(messageText, "/status") != -1)
+            {
+                sendMessageToTelegram(chatId, getStatus());
+            }
+            else
+            { 
+                // Otherwise, just say the message out loud!
+                llSay(0, "[" + chatTitle + "] <" + prettyName + "> " + messageText);
+            }
+            
+
             
             // If this is the highest message ID we've seen, update the flag
             // in the script.
@@ -291,6 +317,26 @@ parseUpdateResponse(string json)
         error("ok wasn't true on a getUpdate request");
         error("message: " + json);
     } 
+}
+
+
+//
+// Get Region Status
+//
+//  Returns some really basic information on the health of a region. This
+//  is just an example of things a bot can do!
+//
+string getStatus()
+{
+    string status = "";
+    
+    status += "Region Name: " + llGetRegionName() + "\n";
+    status += "Sim Name: " + llGetSimulatorHostname() + "\n";
+    status += "Time Dilation: " + (string)llGetRegionTimeDilation() + "\n";
+    status += "FPS: " + (string)llGetRegionFPS() + "\n";
+    status += "Number AVs: " + (string)llGetRegionAgentCount();
+    
+    return status;
 }
 
 
