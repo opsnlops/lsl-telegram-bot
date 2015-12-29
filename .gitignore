@@ -1,0 +1,2 @@
+# Don't upload the file with our API key
+*.creds
