@@ -19,7 +19,7 @@ Enjoy! Let me know if you do anything cool with it. :)
 
 This script polls the Telegram API and doesn't work in [webhook mode](https://core.telegram.org/bots/api#setwebhook). There's no technical reason why LSL shouldn't be able to handle the incoming requests from Telegram via [llRequestSecureURL()](http://wiki.secondlife.com/wiki/LlRequestSecureURL), other than Telegram refuses to talk to port tcp/12043. (Boo! Why Telegram, why??)
 
-Since this is just a proof-of-concept I did for myself, I'm not offering any form of tech support. You can ask me if you have a question, but I can't promise I'll have time to answer. (I'm a very very gal!)
+Since this is just a proof-of-concept I did for myself, I'm not offering any form of tech support. You can ask me if you have a question, but I can't promise I'll have time to answer. (I'm a very busy gal!)
 
 Pull requests would be lovely if you find this useful and make it better!
 
