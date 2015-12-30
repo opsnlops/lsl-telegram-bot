@@ -25,6 +25,11 @@ Pull requests would be lovely if you find this useful and make it better!
 
 
 
+## Known Issues
+
+The LSL code makes no attempt to deal with overlapping events. For example, if someone touches the bot object a bunch of times in a row, the value of `sendMessageRequestId` will be overwritten on each touch and cause errors to be returned to the owner when the `ok` message comes back from Telegram. I can think of a few ways to fix this, but I didn't implement any of them in this example. 
+
+
 ## How to Contact the Author
 
 You can reach me two easy-ish ways:
