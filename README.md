@@ -9,7 +9,7 @@ https://core.telegram.org/bots
 
 This was mostly a proof of concept I made for myself because I wanted to see if I could do it. Turns out it's not nearly as bad as I'd feared, thanks to LSL's new [JSON parser](http://wiki.secondlife.com/wiki/Json_usage_in_LSL).
 
-There's not a lot here to work with. This is just a framework to play with. There's no a lot of actual bot functionally here, other than being able to request 
+There's not a lot here to work with. This is just a framework to play with. There's no a lot of actual bot functionally here, other than being able to request basic stats for the region the in-world bot object is located in. There's also a really crude chat relay present as well, which was mostly used for testing.
 
 Enjoy! Let me know if you do anything cool with it. :)
 
