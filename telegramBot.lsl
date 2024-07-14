@@ -57,7 +57,7 @@ key sendJsonToTelegram(string method, list parameters)
     }
     
     key requestId = llHTTPRequest(outgoingUrl, [HTTP_METHOD, "POST",
-                                                HTTP_MIMETYPE, "Content-Type: application/json",
+                                                HTTP_MIMETYPE, "application/json",
                                                 HTTP_BODY_MAXLENGTH, 16384],
                                                 json);
     debug("Outgoing requestId: " + (string)requestId);
@@ -400,3 +400,4 @@ default
     }
 
 }
+
